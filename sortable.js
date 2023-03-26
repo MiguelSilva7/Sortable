@@ -134,7 +134,7 @@ function renderTable() {
 <td><img src="${c.images.xs}" alt=""></td>
 <td>${c.name}</td>
 <td>${c.biography.fullName}</td>
-<td>${c.powerstats}</td>
+<td>${c.powerstats.tacapacité}</td>
 <td>${c.appearance.race}</td>
 <td>${c.appearance.gender}</td>
 <td>${c.appearance.height[1]}</td>
