@@ -43,12 +43,13 @@ function renderTable() {
 <td><img src="${c.images.xs}" alt=""></td>
 <td>${c.name}</td>
 <td>${c.biography.fullName}</td>
-<td>Intelligence:${c.powerstats.intelligence}/
-   strength :${c.powerstats.strength}/
-    Speed :${c.powerstats.speed}/
-    Durability :${c.powerstats.durability}/
-    Power :${c.powerstats.power}/
-    Combat :${c.powerstats.combat}</td>
+<td><div>Intelligence:${c.powerstats.intelligence}</div>
+    <div>strength :${c.powerstats.strength}</div>
+    <div>Speed :${c.powerstats.speed}</div>
+    <div>Durability :${c.powerstats.durability}</div>
+    <div>Power :${c.powerstats.power}</div>
+    <div>Combat :${c.powerstats.combat}</div>
+    </td>
 <td>${c.appearance.race}</td>
 <td>${c.appearance.gender}</td>
 <td>${c.appearance.height[1]}</td>
