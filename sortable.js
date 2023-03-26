@@ -69,9 +69,6 @@ function sort(e) {
   data.sort((a, b) => {
     if (a[sortCol] < b[sortCol]) return sortAsc ? 1 : -1;
     if (a[sortCol] > b[sortCol]) return sortAsc ? -1 : 1;
-    data.sort((a, b) => 
-    (a.appearance.race > b.appearance.race && b.appearance.race != "null" || a.appearance.race == "null" ? 1 : -1))
-    return 0;
   });
   renderTable();
 }

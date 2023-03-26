@@ -3,6 +3,11 @@ body{
     padding: 0;
 }
 
+.page{
+    margin-top: 5px;
+    text-align: center;
+}
+
 th{
     background-color: grey;
     cursor: pointer;
