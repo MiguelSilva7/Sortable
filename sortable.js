@@ -12,7 +12,7 @@ fetch("https://rawcdn.githack.com/akabab/superhero-api/0.2.0/api/all.json")
         .then((response) => response.json()) // parse the response from JSON
         .then (loadData => {
             const result = document.querySelector("#result")
-            const input = document.querySelector("#champ").value
+            const input = document.querySelector("#nomhero").value
             const newFilter = loadData.filter(instant => instant.name.toLowerCase().includes(input.toLowerCase()))
             result.textContent = "";
             newFilter.map(element => {
