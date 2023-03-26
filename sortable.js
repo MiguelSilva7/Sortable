@@ -67,8 +67,25 @@ function sort(e) {
   sortCol = thisSort;
   console.log("sort dir is ", sortAsc);
   data.sort((a, b) => {
-    if (a[sortCol] < b[sortCol]) return sortAsc ? 1 : -1;
-    if (a[sortCol] > b[sortCol]) return sortAsc ? -1 : 1;
+    if (sortCol === "fullName") {
+      return sortAsc ? a.biography.fullName.localeCompare(b.biography.fullName) : b.biography.fullName.localeCompare(a.biography.fullName);
+    } else if (sortCol === "powerstats") {
+      return sortAsc ? a.powerstats.power - b.powerstats.power : b.powerstats.power - a.powerstats.power;
+    } else if (sortCol === "race") {
+        return sortAsc ? a.appearance.race.toLowerCase().localeCompare(b.appearance.race.toLowerCase()) : b.appearance.race.toLowerCase().localeCompare(a.appearance.race.toLowerCase());
+    } else if (sortCol === "gender") {
+      return sortAsc ? a.appearance.gender.localeCompare(b.appearance.gender) : b.appearance.gender.localeCompare(a.appearance.gender);
+    } else if (sortCol === "height") {
+      return sortAsc ? parseInt(a.appearance.height[1]) - parseInt(b.appearance.height[1]) : parseInt(b.appearance.height[1]) - parseInt(a.appearance.height[1]);
+    } else if (sortCol === "weight") {
+      return sortAsc ? parseInt(a.appearance.weight[1]) - parseInt(b.appearance.weight[1]) : parseInt(b.appearance.weight[1]) - parseInt(a.appearance.weight[1]);
+    } else if (sortCol === "placeOfBirth") {
+      return sortAsc ? a.biography.placeOfBirth.localeCompare(b.biography.placeOfBirth) : b.biography.placeOfBirth.localeCompare(a.biography.placeOfBirth);
+    } else if (sortCol === "alignment") {
+      return sortAsc ? a.biography.alignment.localeCompare(b.biography.alignment) : b.biography.alignment.localeCompare(a.biography.alignment);
+    }else if (sortCol === "name") {
+        return sortAsc ? a.name.localeCompare(b.name) : b.name.localeCompare(a.name);
+      }
     return 0;
   });
   renderTable();

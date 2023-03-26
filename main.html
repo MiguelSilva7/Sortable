@@ -5,10 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="main.css" />
-    <title>Document</title>
+    <title>Herodex</title>
   </head>
   <body>
     <div class="container">
+      <h1>HERODEX</h1>
       <div class="buttons">
         <select name="pagesize" id="page-size-select">
           <option>Size</option>
@@ -16,11 +17,13 @@
           <option value="20">20</option>
           <option value="50">50</option>
           <option value="100">100</option>
-          <option value="all">All Result</option>
+          <option value="731">All Result</option>
         </select>
 
-       
+    
         <input class="input" type="text" id="myInput" placeholder="Search..." />
+        <button id="prevButton">Previous</button>
+        <button id="nextButton">Next</button>
       </div>
 
       <table id="table-sortable">
@@ -30,20 +33,16 @@
             <th data-sort="name">Name</th>
             <th data-sort="fullName">Full Name</th>
             <th data-sort="powerstats">Powerstats</th>
-            <th data-sort="appearance.race">Race</th>
-            <th data-sort="appearance.gender">Gender</th>
-            <th data-sort="appearance.height">Height</th>
-            <th data-sort="appearance.weight">Weight</th>
-            <th data-sort="biography.placeOfBirth">Place Of Birth</th>
-            <th data-sort="biography.alignment">Alignement</th>
+            <th data-sort="race">Race</th>
+            <th data-sort="gender">Gender</th>
+            <th data-sort="height">Height</th>
+            <th data-sort="weight">Weight</th>
+            <th data-sort="placeOfBirth">Place Of Birth</th>
+            <th data-sort="alignment">Alignement</th>
           </tr>
         </thead>
         <tbody></tbody>
       </table>
-      <div class="page">
-        <button id="prevButton">Previous</button>
-        <button id="nextButton">Next</button>
-      </div>
     </div>
 
     <script src="./sortable.js"></script>

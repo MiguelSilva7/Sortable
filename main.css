@@ -1,60 +1,60 @@
-body{
-    margin: 0;
-    padding: 0;
+body {
+  margin: 0;
+  padding: 0;
 }
 
-.container{
+.container {
   display: flex;
   flex-direction: column;
   text-align: center;
+}
 
-}
-.buttons{
-  margin-top: 60px;
-}
-.page{
+.buttons {
   margin-top: 20px;
 }
-th{
-    background-color: grey;
-    cursor: pointer;
+
+th {
+  background-color: grey;
+  cursor: pointer;
 }
 
-td{
-    background-color: lightgray;
+td {
+  border: #6d6868 1px solid;
+  background-color: lightgray;
 }
-.search{
-    text-align: center;
+.search {
+  text-align: center;
 }
 
-option{
-    text-align: center;
+option {
+  text-align: center;
 }
-  
-  #table-sortable {
-    margin-top: 20px;
-    border-collapse: collapse; 
-    width: 100%;    
-    border: 1px solid #ddd; /* Add a grey border */
-    font-size: 18px; /* Increase font-size */
-  }
-  
-  #table-sortable th, #table-sortable td {
-    text-align: left; /* Left-align text */
-    padding: 12px; /* Add padding */
-  }
-  
-  #table-sortable tr {
-    /* Add a bottom border to all table rows */
-    border-bottom: 1px solid #ddd;
-  }
-  
-  #table-sortable tr.header, #table-sortable tr:hover {
-    /* Add a grey background color to the table header and on hover */
-    background-color: #f1f1f1;
-  }
 
+#table-sortable {
+  margin-top: 20px;
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ddd; /* Add a grey border */
+  font-size: 18px; /* Increase font-size */
+}
 
-  th {
-    cursor: pointer;
-  }
+#table-sortable th,
+#table-sortable td {
+  text-align: left; /* Left-align text */
+  padding: 12px; /* Add padding */
+}
+
+#table-sortable tr {
+  /* Add a bottom border to all table rows */
+  border-bottom: 1px solid #ddd;
+}
+
+#table-sortable tr.header,
+#table-sortable tr:hover {
+  /* Add a grey background color to the table header and on hover */
+  background-color: #f1f1f1;
+}
+
+th {
+  cursor: pointer;
+}
