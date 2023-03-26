@@ -78,8 +78,6 @@ function nextPage() {
   renderTable();
 }
 
-
-
 const myInput = document.querySelector("#myInput")
 
     btn.onclick = (e) => {
