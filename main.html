@@ -19,17 +19,11 @@
 			</select>
 		<div class="search">
 			<h1 class="title">Search</h1>
-			<input class="input" type="text" id="nomhero" placeholder="Search...">
-			<div id="Results">
-				
-			</div>
-			<button id="btn">Search</button>
+			<input class="input" type="text"  id="myInput" placeholder="Search...">
 		</div>
-		<div class="table-results">
-			<div class="tableau">
-				<table id="table-sortable">
-					<thead>
-					  <tr>
+			<table id="table-sortable">
+				<thead>
+					<tr>
 						<th class="icon">icon</th>
 						<th>Name</th>
 						<th>Full Name</th>
@@ -40,12 +34,35 @@
 						<th>Weight</th>
 						<th>Place Of Birth</th>
 						<th>Alignement</th>
-					  </tr>
-					</thead>
-				</table>
-			</div>
+					</tr>	
+				</thead>	
+				<tbody>
+				</tbody>
+			</table>
 		</div>
 	</div>
-	<script src="sortable.js"></script>
+	<script src="sortable.js">
+		function myFunction() {
+    // Declare variables
+    let input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("table-sortable");
+    tr = table.getElementsByTagName("tr");
+
+// Loop through all table rows, and hide those who don't match the search query
+    for (i = 0; i < tr.length; i++) {
+      td = tr[i].getElementById("td")[1];
+      if (td) {
+        txtValue = td.textContent || td.innerText
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+            }else {
+          tr[i].style.display = "none";
+            }
+         }
+    }
+}
+	</script>
 	</body>
 </html>

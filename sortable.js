@@ -5,7 +5,7 @@ function loadData2(heroes) {
     const heroimage = heroArrays.map((hero) => hero.images.xs);
     const heroname = heroArrays.map((hero) => hero.name);
     const herofullname = heroArrays.map((hero) => hero.biography.fullName);
-    const heropowers = heroArrays.map((hero) => hero.powerstats);
+    const heropowers = heroArrays.map((hero) => hero.powerstats.intelligence);
     const herorace = heroArrays.map((hero) => hero.appearance.race);
     const herogender = heroArrays.map((hero) => hero.appearance.gender);
     const heroheight = heroArrays.map((hero) => hero.appearance.height);
@@ -89,24 +89,58 @@ fetch("https://rawcdn.githack.com/akabab/superhero-api/0.2.0/api/all.json")
     newRow(hero); 
 });
 
-const myInput = document.querySelector("#myInput")
+document.addEventListener('DOMContentLoaded', init, false);
 
-    btn.onclick = (e) => {
-        e.preventDefault()
-        fetch("https://rawcdn.githack.com/akabab/superhero-api/0.2.0/api/all.json")
-        .then((response) => response.json()) // parse the response from JSON
-        .then (loadData => {
-            const input = document.querySelector("#nomhero").value
-            const newFilter = loadData.filter(instant => instant.name.toLowerCase().includes(input.toLowerCase()))
-            result.textContent = "";
-            newFilter.map(element => {
-                    console.log('test')
-                    const tr = document.createElement("tr")  
-                    const th = document.createElement("th")
-                    tr.appendChild(th);
-                    th.textContent = element.name;
-                    result.append(tr)
-                })
-            })
-    }
+let data, table, sortCol;
+let sortAsc = false;
 
+async function init() {
+  
+  // Select the table (well, tbody)
+  table = document.querySelector('#table-sortable tbody');
+  // get the cats
+  let resp = await fetch('https://rawcdn.githack.com/akabab/superhero-api/0.2.0/api/all.json');
+  data = await resp.json();
+  renderTable();
+  
+  // listen for sort clicks
+  document.querySelectorAll('#table-sortable thead tr th').forEach(t => {
+     t.addEventListener('click', sort, false);
+  });
+  
+}
+
+function sort(e) {
+  let thisSort = e.target.dataset.sort;
+  if(sortCol === thisSort) sortAsc = !sortAsc;
+  sortCol = thisSort;
+  data.sort((a, b) => {
+    if(a[sortCol] < b[sortCol]) return sortAsc?1:-1;
+    if(a[sortCol] > b[sortCol]) return sortAsc?-1:1;
+    return 0;
+  });
+  loadData2();
+}
+
+
+
+// const myInput = document.querySelector("#myInput")
+
+//     btn.onclick = (e) => {
+//         e.preventDefault()
+//         fetch("https://rawcdn.githack.com/akabab/superhero-api/0.2.0/api/all.json")
+//         .then((response) => response.json()) // parse the response from JSON
+//         .then (loadData => {
+//             const input = document.querySelector("#nomhero").value
+//             const newFilter = loadData.filter(instant => instant.name.toLowerCase().includes(input.toLowerCase()))
+//             result.textContent = "";
+//             newFilter.map(element => {
+//                     console.log('test')
+//                     const tr = document.createElement("tr")  
+//                     const th = document.createElement("th")
+//                     tr.appendChild(th);
+//                     th.textContent = element.name;
+//                     result.append(tr)
+//                 })
+//             })
+//     }
