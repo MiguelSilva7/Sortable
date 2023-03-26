@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", init, false);
 
 let data, table, sortCol;
 let sortAsc = false;
-let pageSize = 10;
+let pageSize = 20;
 let curPage = 1;
 
 async function init() {
