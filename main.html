@@ -4,26 +4,40 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sortable</title>
-    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="main.css">
+    <title>Document</title>
   </head>
   <body>
+ <select name="pagesize" id="page-size-select">
+    <option >Size</option>
+    <option value="10">10</option>
+    <option value="25">25</option>
+    <option value="50">50</option>
+    <option value="100">100</option>
+    <option value="all">All Result</option>
+ </select>
+
+    <button id="prevButton">Previous</button> 
+    <button id="nextButton">Next</button> 
     <table id="table-sortable">
       <thead>
         <tr>
           <th class="icon">icon</th>
-          <th>Name</th>
-          <th>Full Name</th>
-          <th>Powerstats</th>
-          <th>Race</th>
-          <th>Gender</th>
-          <th>Height</th>
-          <th>Weight</th>
-          <th>Place Of Birth</th>
-          <th>Alignement</th>
+          <th data-sort="name">Name</th>
+          <th data-sort="fullName">Full Name</th>
+          <th data-sort="powerstats">Powerstats</th>
+          <th data-sort="appearance.race">Race</th>
+          <th data-sort="appearance.gender">Gender</th>
+          <th data-sort="appearance.height">Height</th>
+          <th data-sort="appearance.weight">Weight</th>
+          <th data-sort="biography.placeOfBirth">Place Of Birth</th>
+          <th data-sort="biography.alignment">Alignement</th>
         </tr>
       </thead>
+      <tbody>
+      </tbody>
     </table>
+    
     <script src="./sortable.js"></script>
   </body>
 </html>
