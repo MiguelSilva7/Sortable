@@ -159,6 +159,8 @@ function sort(e) {
   data.sort((a, b) => {
     if (a[sortCol] < b[sortCol]) return sortAsc ? 1 : -1;
     if (a[sortCol] > b[sortCol]) return sortAsc ? -1 : 1;
+    data.sort((a, b) => 
+    (a.appearance.race > b.appearance.race && b.appearance.race != "null" || a.appearance.race == "null" ? 1 : -1))
     return 0;
   });
   renderTable();
@@ -174,28 +176,39 @@ function nextPage() {
   renderTable();
 }
 
+function search() {
+    const input = document.querySelector('#myInput').value.toLowerCase();
+    const tr = table.querySelectorAll('tr');
+    tr.forEach(tr => {
+      const name = tr.querySelector('td').textContent.toLowerCase();
+      if (name.includes(input)) {
+        tr.classList.add('visible');
+      } else {
+        tr.classList.remove('visible');
+      }
+    });
+  }
 
+// const myInput = document.querySelector("#myInput")
 
-const myInput = document.querySelector("#myInput")
-
-    btn.onclick = (e) => {
-        e.preventDefault()
-        fetch("https://rawcdn.githack.com/akabab/superhero-api/0.2.0/api/all.json")
-        .then((response) => response.json()) // parse the response from JSON
-        .then (loadData => {
-            const input = document.querySelector("#nomhero").value
-            const newFilter = loadData.filter(instant => instant.name.toLowerCase().includes(input.toLowerCase()))
-            result.textContent = "";
-            newFilter.map(element => {
-                    console.log('test')
-                    const tr = document.createElement("tr")  
-                    const th = document.createElement("th")
-                    tr.appendChild(th);
-                    th.textContent = element.name;
-                    result.append(tr)
-                })
-            })
-    }
+//     btn.onclick = (e) => {
+//         e.preventDefault()
+//         fetch("https://rawcdn.githack.com/akabab/superhero-api/0.2.0/api/all.json")
+//         .then((response) => response.json()) // parse the response from JSON
+//         .then (loadData => {
+//             const input = document.querySelector("#nomhero").value
+//             const newFilter = loadData.filter(instant => instant.name.toLowerCase().includes(input.toLowerCase()))
+//             result.textContent = "";
+//             newFilter.map(element => {
+//                     console.log('test')
+//                     const tr = document.createElement("tr")  
+//                     const th = document.createElement("th")
+//                     tr.appendChild(th);
+//                     th.textContent = element.name;
+//                     result.append(tr)
+//                 })
+//             })
+//     }
 
 // 		function myFunction() {
 //     // Declare variables
