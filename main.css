@@ -1,5 +1,19 @@
-td, th {
+table thead{
+  background-color: blueviolet;
+}
+
+table td{
+  border-collapse: collapse;
+  border: 1px solid #333;
+  color: rgb(111, 1, 255);
+}
+
+table{
+  margin-top: 20px;
+}
+ td {
     padding: 5px;
+    background-color: rgb(228, 228, 228);
   }
 
   th {
