@@ -3,7 +3,11 @@ body{
 	padding: 0;
 }
 
-table {
+table, th,td {
+	border-collapse: collapse;
+	border: 1px solid #ccc;
 	width: 95%;
 }
-
+thead{
+	cursor: pointer;
+}

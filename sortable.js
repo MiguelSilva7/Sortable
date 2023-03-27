@@ -31,7 +31,6 @@ function loadData2(heroes) {
 
     temp = [];
   }
-  // console.log(hero[1][1]);
   return hero;
 }
 
@@ -45,43 +44,60 @@ fetch("https://rawcdn.githack.com/akabab/superhero-api/0.2.0/api/all.json")
 
     function newRow(hero) {
       let table = document.getElementById("table-sortable");
-      
+
       for (let i = 0; i < hero.length; i++) {
-        
         const row = table.insertRow();
-        
+
         const iconCell = row.insertCell();
-        let icon = document.createElement('img')
+        let icon = document.createElement("img");
         icon.src = hero[i][0];
         iconCell.appendChild(icon);
-        
+
         const nameCell = row.insertCell();
         nameCell.textContent = hero[i][1];
-        
+
         const fullNameCell = row.insertCell();
         fullNameCell.textContent = hero[i][2];
-        
+
         const powerstatCell = row.insertCell();
         powerstatCell.textContent = hero[i][3];
-        
+
         const raceCell = row.insertCell();
         raceCell.textContent = hero[i][4];
-        
+
         const genderCell = row.insertCell();
         genderCell.textContent = hero[i][5];
-        
+
         const heightCell = row.insertCell();
         heightCell.textContent = hero[i][6][1];
-        
+
         const weightCell = row.insertCell();
         weightCell.textContent = hero[i][7][1];
-        
+
         const birthCell = row.insertCell();
         birthCell.textContent = hero[i][8];
-        
+
         const alignementCell = row.insertCell();
         alignementCell.textContent = hero[i][9];
       }
     }
     newRow(hero);
   });
+
+function sortName(heroes) {
+  const heroArrays = Object.values(heroes);
+  const heroname = heroArrays.map((hero) => hero.name);
+
+  let name = [];
+  let temp = [];
+
+  for (let i = 0; i < heroname.length; i++) {
+    temp.push(heroname[i]);
+    name.push(temp);
+
+    temp = [];
+  }
+  return name;
+}
+
+console.log(sortName);
