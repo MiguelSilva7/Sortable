@@ -101,23 +101,15 @@ function nextPage() {
   renderTable();
 }
 
-const myInput = document.querySelector("#myInput")
-
-    btn.onclick = (e) => {
-        e.preventDefault()
-        fetch("https://rawcdn.githack.com/akabab/superhero-api/0.2.0/api/all.json")
-        .then((response) => response.json()) // parse the response from JSON
-        .then (loadData => {
-            const input = document.querySelector("#nomhero").value
-            const newFilter = loadData.filter(instant => instant.name.toLowerCase().includes(input.toLowerCase()))
-            result.textContent = "";
-            newFilter.map(element => {
-                    console.log('test')
-                    const tr = document.createElement("tr")  
-                    const th = document.createElement("th")
-                    tr.appendChild(th);
-                    th.textContent = element.name;
-                    result.append(tr)
-                })
-            })
-    }
+function search() {
+    const input = document.querySelector('#myInput').value.toLowerCase();
+    const rows = table-sortable.querySelectorAll('tr');
+    rows.forEach(row => {
+      const name = row.querySelector('td:nth-child(2)').textContent.toLowerCase();
+      if (name.includes(input)) {
+        row.classList.add('visible');
+      } else {
+        row.classList.remove('visible');
+      }
+    });
+  }
