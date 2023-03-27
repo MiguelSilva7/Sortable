@@ -1,3 +1,4 @@
+
 body{
     margin: 0;
     padding: 0;
@@ -27,7 +28,6 @@ option{
 
 
 #myInput {
-    background-image: url('/css/searchicon.png'); 
     background-position: 10px 12px; 
     background-repeat: no-repeat; 
     width: 20%; /* Full-width */

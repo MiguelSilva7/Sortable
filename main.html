@@ -11,14 +11,14 @@
  <select name="pagesize" id="page-size-select">
     <option >Size</option>
     <option value="10">10</option>
-    <option value="25">25</option>
+    <option value="20">20</option>
     <option value="50">50</option>
     <option value="100">100</option>
     <option value="731">All Result</option>
  </select>
 	<div class="search">
-		<h1 class="title">Search</h1>
-		<input class="input" type="text"  id="myInput" placeholder="Search...">
+		<label for="search">Search :</label>
+		<input type="text"  id="myInput">
 	</div> 
     <table id="table-sortable">
       <thead>
@@ -40,7 +40,7 @@
     </table>
     <script src="./sortable.js">
 	</script>
-	<div class="page">
+		<div class="page">
 		<button id="prevButton">Previous</button>
 		<button id="nextButton">Next</button>
 	  </div>

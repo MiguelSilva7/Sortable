@@ -83,58 +83,32 @@ function nextPage() {
   renderTable();
 }
 
-function search() {
-    const input = document.querySelector('#myInput').value.toLowerCase();
-    const tr = table.querySelectorAll('tr');
-    tr.forEach(tr => {
-      const name = tr.querySelector('td').textContent.toLowerCase();
-      if (name.includes(input)) {
-        tr.classList.add('visible');
-      } else {
-        tr.classList.remove('visible');
-      }
-    });
-  }
-
-// const myInput = document.querySelector("#myInput")
+// const myInput = document.querySelector("#myInput");
 
 //     btn.onclick = (e) => {
 //         e.preventDefault()
 //         fetch("https://rawcdn.githack.com/akabab/superhero-api/0.2.0/api/all.json")
 //         .then((response) => response.json()) // parse the response from JSON
 //         .then (loadData => {
-//             const input = document.querySelector("#nomhero").value
+//             const input = document.querySelector('#myInput').value
 //             const newFilter = loadData.filter(instant => instant.name.toLowerCase().includes(input.toLowerCase()))
-//             result.textContent = "";
 //             newFilter.map(element => {
-//                     console.log('test')
-//                     const tr = document.createElement("tr")  
-//                     const th = document.createElement("th")
+//               const tr = document.createElement('tr')  
+//               const th = document.createElement('th')
 //                     tr.appendChild(th);
 //                     th.textContent = element.name;
-//                     result.append(tr)
-//                 })
+//                 }) 
 //             })
 //     }
-
-// 		function myFunction() {
-//     // Declare variables
-//     let input, filter, table, tr, td, i, txtValue;
-//     input = document.getElementById("myInput");
-//     filter = input.value.toUpperCase();
-//     table = document.getElementById("table-sortable");
-//     tr = table.getElementsByTagName("tr");
-
-// // Loop through all table rows, and hide those who don't match the search query
-//     for (i = 0; i < tr.length; i++) {
-//       td = tr[i].getElementById("td")[1];
-//       if (td) {
-//         txtValue = td.textContent || td.innerText
-//             if (txtValue.toUpperCase().indexOf(filter) > -1) {
-//           tr[i].style.display = "";
-//             }else {
-//           tr[i].style.display = "none";
-//             }
-//          }
-//     }
-// }
+ function search() {
+    const input = document.querySelector('#myInput').value.toLowerCase();
+    const rows = table-sortable.querySelectorAll('tr');
+    rows.forEach(row => {
+      const name = row.querySelector('td:nth-child(2)').textContent.toLowerCase();
+      if (name.includes(input)) {
+        row.classList.add('visible');
+      } else {
+        row.classList.remove('visible');
+      }
+    });
+  }
