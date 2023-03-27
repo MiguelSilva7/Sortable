@@ -83,23 +83,6 @@ function nextPage() {
   renderTable();
 }
 
-// const myInput = document.querySelector("#myInput");
-
-//     btn.onclick = (e) => {
-//         e.preventDefault()
-//         fetch("https://rawcdn.githack.com/akabab/superhero-api/0.2.0/api/all.json")
-//         .then((response) => response.json()) // parse the response from JSON
-//         .then (loadData => {
-//             const input = document.querySelector('#myInput').value
-//             const newFilter = loadData.filter(instant => instant.name.toLowerCase().includes(input.toLowerCase()))
-//             newFilter.map(element => {
-//               const tr = document.createElement('tr')  
-//               const th = document.createElement('th')
-//                     tr.appendChild(th);
-//                     th.textContent = element.name;
-//                 }) 
-//             })
-//     }
  function search() {
     const input = document.querySelector('#myInput').value.toLowerCase();
     const rows = table-sortable.querySelectorAll('tr');
