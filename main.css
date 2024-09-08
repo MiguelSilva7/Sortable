@@ -1,60 +1,133 @@
-body {
+/* Reset styles */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-.container {
+/* Global styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+header, footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+}
+
+/* Header styles */
+.header {
+  background: linear-gradient(135deg, #ff4a57, #6a82fb);
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+}
+
+.header p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+/* Controls section */
+.controls {
   display: flex;
-  flex-direction: column;
-  text-align: center;
+  justify-content: space-around;
+  padding: 20px;
+  background-color: #eee;
+  margin: 20px auto;
+  max-width: 1200px;
+  border-radius: 8px;
 }
 
-.buttons {
-  margin-top: 20px;
+.search-container input {
+  padding: 10px;
+  font-size: 1rem;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  width: 250px;
 }
 
-th {
-  background-color: grey;
-  cursor: pointer;
+.dropdown select {
+  padding: 10px;
+  font-size: 1rem;
+  border: 2px solid #ddd;
+  border-radius: 4px;
 }
 
-td {
-  border: #6d6868 1px solid;
-  background-color: lightgray;
-}
-.search {
-  text-align: center;
-}
-
-option {
-  text-align: center;
+/* Table styles */
+.table-container {
+  max-width: 1200px;
+  margin: 20px auto;
+  overflow-x: auto;
 }
 
-#table-sortable {
-  margin-top: 20px;
-  border-collapse: collapse;
+table {
   width: 100%;
-  border: 1px solid #ddd; /* Add a grey border */
-  font-size: 18px; /* Increase font-size */
+  border-collapse: collapse;
+  margin-bottom: 20px;
 }
 
-#table-sortable th,
-#table-sortable td {
-  text-align: left; /* Left-align text */
-  padding: 12px; /* Add padding */
-}
-
-#table-sortable tr {
-  /* Add a bottom border to all table rows */
+table th, table td {
+  text-align: left;
+  padding: 12px;
   border-bottom: 1px solid #ddd;
 }
 
-#table-sortable tr.header,
-#table-sortable tr:hover {
-  /* Add a grey background color to the table header and on hover */
+table th {
+  background-color: #333;
+  color: white;
+  cursor: pointer;
+}
+
+table td {
+  background-color: #f9f9f9;
+}
+
+table tr:hover {
   background-color: #f1f1f1;
 }
 
-th {
+table img {
+  max-width: 100px;
+}
+
+/* Pagination */
+.pagination {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.pagination button {
+  background-color: #ff4a57;
+  color: white;
+  padding: 10px 20px;
+  margin: 0 10px;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
   cursor: pointer;
+}
+
+.pagination button:hover {
+  background-color: #6a82fb;
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
 }

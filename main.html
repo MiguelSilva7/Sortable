@@ -5,32 +5,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="main.css" />
-    <title>Herodex</title>
+    <title>Herodex - Heroes and Villains</title>
   </head>
   <body>
-    <div class="container">
+    <div class="header">
       <h1>HERODEX</h1>
-      <div class="buttons">
+      <p>Explore the world of Heroes and Villains</p>
+    </div>
+
+    <div class="controls">
+      <div class="search-container">
+        <label for="myInput">Search: </label>
+        <input type="text" id="myInput" placeholder="Search for heroes or villains..." />
+      </div>
+
+      <div class="dropdown">
+        <label for="page-size-select">Results per page: </label>
         <select name="pagesize" id="page-size-select">
           <option>Size</option>
           <option value="10">10</option>
           <option value="20">20</option>
           <option value="50">50</option>
           <option value="100">100</option>
-          <option value="731">All Result</option>
+          <option value="731">All Results</option>
         </select>
-		<div class="search">
-			<label for="search">Search :</label>
-			<input type="text"  id="myInput">
-		</div> 
-        <button id="prevButton">Previous</button>
-        <button id="nextButton">Next</button>
       </div>
+    </div>
 
+    <div class="table-container">
       <table id="table-sortable">
         <thead>
           <tr>
-            <th class="icon">icon</th>
+            <th>Icon</th>
             <th data-sort="name">Name</th>
             <th data-sort="fullName">Full Name</th>
             <th data-sort="powerstats">Powerstats</th>
@@ -39,16 +45,22 @@
             <th data-sort="height">Height</th>
             <th data-sort="weight">Weight</th>
             <th data-sort="placeOfBirth">Place Of Birth</th>
-            <th data-sort="alignment">Alignement</th>
+            <th data-sort="alignment">Alignment</th>
           </tr>
         </thead>
         <tbody></tbody>
       </table>
     </div>
+
+    <div class="pagination">
+      <button id="prevButton">Previous</button>
+      <button id="nextButton">Next</button>
+    </div>
+
+    <footer>
+      <p>&copy; 2024 Herodex. All rights reserved.</p>
+    </footer>
+
     <script src="./sortable.js"></script>
-		<div class="page">
-		<button id="prevButton">Previous</button>
-		<button id="nextButton">Next</button>
-	  </div>
   </body>
 </html>
